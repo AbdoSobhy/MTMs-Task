@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        mapView.delegate = self
         
         setupUi()
         getRequestData()
@@ -34,6 +33,8 @@ class ViewController: UIViewController {
     
     
     func setupUi(){
+        mapView.delegate = self
+        self.overrideUserInterfaceStyle = .dark
         requestViewHeightConstent.constant = 0
         requestView.isHidden = true
     }
@@ -58,7 +59,7 @@ class ViewController: UIViewController {
                     let lat = requestData["sourceLatitude"] as? Double ?? 0
                     let destLang = requestData["destinationLongitude"] as? Double ?? 0
                     let destLat = requestData["destinationLatitude"] as? Double ?? 0
-                    
+                    // show route
                     let coordinateOne = CLLocationCoordinate2D(latitude: CLLocationDegrees(exactly: lat)!, longitude: CLLocationDegrees(exactly: long)!)
                     let coordinateTwo = CLLocationCoordinate2D(latitude: CLLocationDegrees(exactly: destLat)!, longitude: CLLocationDegrees(exactly: destLang)!)
                     self?.showRouteOnMap(pickupCoordinate: coordinateOne, destinationCoordinate: coordinateTwo)
@@ -70,7 +71,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MKMapViewDelegate{
-    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor.systemBlue
@@ -85,7 +85,6 @@ extension ViewController: MKMapViewDelegate{
         let request = MKDirections.Request()
         let annotation = MKPointAnnotation()
         let destAnnotation = MKPointAnnotation()
-        
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: pickupCoordinate, addressDictionary: nil))
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destinationCoordinate, addressDictionary: nil))
         request.requestsAlternateRoutes = true
@@ -97,7 +96,7 @@ extension ViewController: MKMapViewDelegate{
         mapView.addAnnotation(destAnnotation)
         
         let directions = MKDirections(request: request)
-        
+        // get paths
         directions.calculate { [weak self] response, error in
             guard let unwrappedResponse = response else { return }
             
