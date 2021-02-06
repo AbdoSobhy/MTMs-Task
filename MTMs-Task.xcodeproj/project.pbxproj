@@ -77,18 +77,58 @@
 		52212C7725CCACDA009C5956 /* MTMs-Task */ = {
 			isa = PBXGroup;
 			children = (
-				52212C7825CCACDA009C5956 /* AppDelegate.swift */,
-				52212C7C25CCACDA009C5956 /* RequestMapVC.swift */,
-				52571D9D25CECC18003681B0 /* RequestMapViewModel.swift */,
-				52571DA025CECCF5003681B0 /* RequestModel.swift */,
-				52212C7E25CCACDA009C5956 /* Main.storyboard */,
-				52212C8125CCACDF009C5956 /* Assets.xcassets */,
-				52212C8325CCACDF009C5956 /* LaunchScreen.storyboard */,
-				52212C8625CCACDF009C5956 /* Info.plist */,
-				524D9B9625CD706A0087147F /* GoogleService-Info.plist */,
+				52571DA825CEDDDA003681B0 /* Storyboards */,
+				52571DA725CEDDB9003681B0 /* Resources */,
+				52571DA625CEDD92003681B0 /* Epic */,
+				52571DA525CEDD5F003681B0 /* Configuration */,
+				52571DA325CEDD48003681B0 /* Application */,
 				52ED756425CD87E400DEA86C /* Extenstion */,
 			);
 			path = "MTMs-Task";
+			sourceTree = "<group>";
+		};
+		52571DA325CEDD48003681B0 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				52212C7825CCACDA009C5956 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		52571DA525CEDD5F003681B0 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				52212C8625CCACDF009C5956 /* Info.plist */,
+				524D9B9625CD706A0087147F /* GoogleService-Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		52571DA625CEDD92003681B0 /* Epic */ = {
+			isa = PBXGroup;
+			children = (
+				52212C7C25CCACDA009C5956 /* RequestMapVC.swift */,
+				52571D9D25CECC18003681B0 /* RequestMapViewModel.swift */,
+				52571DA025CECCF5003681B0 /* RequestModel.swift */,
+			);
+			path = Epic;
+			sourceTree = "<group>";
+		};
+		52571DA725CEDDB9003681B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52212C8125CCACDF009C5956 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		52571DA825CEDDDA003681B0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				52212C7E25CCACDA009C5956 /* Main.storyboard */,
+				52212C8325CCACDF009C5956 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		52ED756425CD87E400DEA86C /* Extenstion */ = {
@@ -377,7 +417,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67S6R633P7;
-				INFOPLIST_FILE = "MTMs-Task/Info.plist";
+				INFOPLIST_FILE = "MTMs-Task/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -398,7 +438,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67S6R633P7;
-				INFOPLIST_FILE = "MTMs-Task/Info.plist";
+				INFOPLIST_FILE = "MTMs-Task/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
